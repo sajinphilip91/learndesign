@@ -6,6 +6,8 @@
   body {
     @apply bg-background text-primary antialiased;
     font-family: 'Afacad', sans-serif;
+    overflow: hidden;
+    height: 100vh;
   }
 }
 

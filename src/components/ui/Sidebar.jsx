@@ -68,7 +68,7 @@ const SidebarItem = ({ icon: Icon, to, label, isActive: forceActive }) => {
 
 export function Sidebar() {
     return (
-        <aside className="h-screen w-24 shrink-0 bg-[#D9D9D9] flex flex-col items-center justify-center py-8 z-50 sticky top-0">
+        <aside className="h-full w-24 shrink-0 bg-[#D9D9D9] flex flex-col items-center justify-center py-8 z-50">
             {/* 1. Home */}
             <SidebarItem icon={Home} to="/" label="Home" />
 
