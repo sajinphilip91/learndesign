@@ -10,6 +10,7 @@ const HeuristicDetail = React.lazy(() => import('./pages/Heuristics/HeuristicDet
 const LawsLayout = React.lazy(() => import('./layouts/LawsLayout'));
 const LawDetail = React.lazy(() => import('./pages/Laws/LawDetail'));
 const QuizEngine = React.lazy(() => import('./pages/Quiz/QuizEngine'));
+const Learning = React.lazy(() => import('./pages/Learning'));
 const ComingSoon = React.lazy(() => import('./pages/ComingSoon'));
 
 function App() {
@@ -19,6 +20,9 @@ function App() {
         <Routes>
           <Route path="/" element={<MainLayout />}>
             <Route index element={<Home />} />
+
+            {/* New Learning Dashboard */}
+            <Route path="learning" element={<Learning />} />
 
             {/* Heuristics Module with Master-Detail Layout */}
             <Route path="heuristics" element={<HeuristicsLayout />}>
@@ -31,10 +35,13 @@ function App() {
               <Route index element={<Navigate to="aesthetic-usability-effect" replace />} />
               <Route path=":id" element={<LawDetail />} />
             </Route>
-            {/* Other Modules */}
-            <Route path="ai-design" element={<ComingSoon title="AI & Design" subtitle="Exploring the intersection of generative AI and user interface design." icon="sparkles" />} />
-            <Route path="behavioral-design" element={<ComingSoon title="Behavioral Design" subtitle="Understanding the psychology behind user decisions and habits." icon="brain" />} />
-            <Route path="top-tools" element={<ComingSoon title="Top Tools" subtitle="A curated collection of the best tools for modern product design." icon="wrench" />} />
+
+            {/* New Placeholder Pages */}
+            <Route path="ai-design" element={<ComingSoon title="AI & Design" subtitle="Exploring the intersection of generative AI and user interface design." icon={React.lazy(() => import('lucide-react').then(module => ({ default: module.Sparkles })))} />} />
+            <Route path="jobs" element={<ComingSoon title="Design Jobs" subtitle="Find your next role at top design-driven companies." icon={React.lazy(() => import('lucide-react').then(module => ({ default: module.Briefcase })))} />} />
+            <Route path="mentorship" element={<ComingSoon title="Mentorship" subtitle="Connect with industry experts and grow your career." icon={React.lazy(() => import('lucide-react').then(module => ({ default: module.Users })))} />} />
+            <Route path="shop" element={<ComingSoon title="Shop" subtitle="Digital assets, prints, and merch for designers." icon={React.lazy(() => import('lucide-react').then(module => ({ default: module.ShoppingBag })))} />} />
+            <Route path="more" element={<ComingSoon title="Coming Soon" subtitle="More exciting features are on the way." icon={React.lazy(() => import('lucide-react').then(module => ({ default: module.MoreHorizontal })))} />} />
 
             <Route path="quiz" element={<QuizEngine />} />
             <Route path="*" element={<Navigate to="/" replace />} />

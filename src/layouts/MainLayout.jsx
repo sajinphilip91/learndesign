@@ -10,8 +10,8 @@ export function MainLayout() {
                 <Header />
                 <div className="flex flex-1 overflow-hidden">
                     <Sidebar />
-                    <main className="flex-1 p-8 h-full overflow-hidden flex flex-col justify-center">
-                        <div className="w-full h-full max-h-[900px]">
+                    <main className="flex-1 p-8 h-full overflow-hidden flex flex-col">
+                        <div className="w-full h-full">
                             <Outlet />
                         </div>
                     </main>
