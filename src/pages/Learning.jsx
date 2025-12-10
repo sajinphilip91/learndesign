@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card } from '../components/ui/Card';
 import { Link } from 'react-router-dom';
-import { Monitor, Shield, Trophy, ArrowRight, Brain } from 'lucide-react';
+import { Monitor, Shield, Trophy, ArrowRight, Brain, Sparkles, Briefcase, Users } from 'lucide-react';
 
 const ModuleCard = ({ title, description, icon: Icon, to, colorClass, delay }) => (
     <Link to={to} className="group h-full">
